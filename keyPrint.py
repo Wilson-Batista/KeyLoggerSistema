@@ -63,7 +63,6 @@ def run():
     mouseListar.start()
     tecladoLista.join()
     mouseListar.join()
-    mouseListar.stop
 
 if __name__ == '__main__':
     run()
