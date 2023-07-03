@@ -1,3 +1,6 @@
 # KeyLoggerSistema
-# tail -f keyLogger.log
+```py 
+pip install
+
+```
 
